@@ -1,4 +1,5 @@
 import random
+import time
 
 def generate_values(size):
     array_list = []
@@ -35,6 +36,9 @@ def binary_search(array, target):
         else:
             high = mid - 1
     return False
+
+def repeat_search_function(search_method,array_list,target_value,iterations):
+    total_time = 0
 
 if __name__ == "__main__":
     array_list = generate_values(10)
