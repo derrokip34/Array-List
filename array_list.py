@@ -12,9 +12,10 @@ def swap_values(array, a, b):
     array[b] = temp
 
 def sort_array(array):
-    for i in range(len(array)-1):  # Correcting the loop condition
-        if array[i] > array[i+1]:
-            swap_values(array, i, i+1)
+    for i in range(len(array)):
+        for j in range(len(array)):
+            if array[i] < array[j]:
+                swap_values(array, i, j)
     return array
 
 def linear_search(array_list,target):
@@ -23,5 +24,3 @@ def linear_search(array_list,target):
             return True
     return False
 
-if __name__ == "__main__":
-    array_list = generate_values(10)
