@@ -16,3 +16,12 @@ def sort_array(array):
         if array[i] > array[i+1]:
             swap_values(array, i, i+1)
     return array
+
+def linear_search(array_list,target):
+    for i in range(len(array_list)):
+        if array_list[i] == target:
+            return True
+    return False
+
+if __name__ == "__main__":
+    array_list = generate_values(10)
