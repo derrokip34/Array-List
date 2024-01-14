@@ -39,6 +39,23 @@ def binary_search(array, target):
 
 def repeat_search_function(search_method,array_list,target_value,iterations):
     total_time = 0
+    for _ in range(iterations):
+        start = time.time()
+        search_result =  search_method(array_list,target_value)
+        end = time.time()
+        total_time += (end - start)
+    if search_result:
+        print(f"{target_value} found")
+    else:
+        print(f"{target_value} not found")
+    
+    avg_time = total_time/iterations
+
+    return avg_time
 
 if __name__ == "__main__":
-    array_list = generate_values(10)
+    list_sizes = [100,300,800]
+    for i in range(len(list_sizes)):
+        array_list = generate_values(list_sizes[i])
+
+        
