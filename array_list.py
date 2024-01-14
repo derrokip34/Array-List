@@ -58,4 +58,11 @@ if __name__ == "__main__":
     for i in range(len(list_sizes)):
         array_list = generate_values(list_sizes[i])
 
+        target_value = random.choice(array_list)
+
+        linear_search_time = repeat_search_function(linear_search, array_list, target_value, 1000)
+        print(f"Linear Search Time for size {list_sizes[i]}: {linear_search_time:.10f} seconds")
         
+        sorted_array = sort_array(array_list)
+        binary_search_time = repeat_search_function(binary_search, sorted_array, target_value, 1000)
+        print(f"Binary Search Time for size {list_sizes[i]}: {binary_search_time:.10f} seconds")
