@@ -24,3 +24,17 @@ def linear_search(array_list,target):
             return True
     return False
 
+def binary_search(array, target):
+    low, high = 0, len(array) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if array[mid] == target:
+            return True
+        elif array[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return False
+
+if __name__ == "__main__":
+    array_list = generate_values(10)
